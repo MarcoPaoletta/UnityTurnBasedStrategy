@@ -424,6 +424,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSystemVisualSinglePrefab: {fileID: 5496127639031234803, guid: 29395b53af2679645ad63e08b29fdcb8,
     type: 3}
+  gridVisualTypeMaterialList:
+  - gridVisualType: 0
+    material: {fileID: 2100000, guid: 24ed86f4af5891d43bb128c68cdd2e96, type: 2}
+  - gridVisualType: 1
+    material: {fileID: 2100000, guid: 39c4fe8d3e5ce854081b3ecbb81cb91f, type: 2}
+  - gridVisualType: 2
+    material: {fileID: 2100000, guid: d1afcc736e215624ab77c7d9b01ef9a1, type: 2}
+  - gridVisualType: 4
+    material: {fileID: 2100000, guid: 00bb5ea9ccabb9741a9a076ae105e953, type: 2}
+  - gridVisualType: 3
+    material: {fileID: 2100000, guid: 662c6bcfd9f1a4f4caaaf42829619da4, type: 2}
 --- !u!4 &378103783
 Transform:
   m_ObjectHideFlags: 0
@@ -3171,7 +3182,7 @@ PrefabInstance:
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
@@ -3181,7 +3192,7 @@ PrefabInstance:
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
