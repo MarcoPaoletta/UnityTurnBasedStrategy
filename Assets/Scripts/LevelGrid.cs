@@ -10,7 +10,7 @@ public class LevelGrid : MonoBehaviour
 
     [SerializeField] private Transform gridDebugObjectPrefab;
 
-    private GridSystem gridSystem;
+    private GridSystem<GridObject> gridSystem;
 
     public static LevelGrid Instance { get; private set; }
 
@@ -25,7 +25,12 @@ public class LevelGrid : MonoBehaviour
         
         Instance = this;
 
-        gridSystem = new GridSystem(10, 10, 2f);
+        gridSystem = new GridSystem<GridObject>(
+            10, 
+            10, 
+            2f, 
+            (GridSystem<GridObject> g, GridPosition gridPosition) => new GridObject(g, gridPosition));
+
         gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
     }
 
