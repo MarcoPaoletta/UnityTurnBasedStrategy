@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ShootAction : BaseAction
 {
+    [SerializeField] private LayerMask obstaclesLayerMask;
+
     public event EventHandler<OnShootEventArgs> OnShoot;
 
     public class OnShootEventArgs : EventArgs
@@ -132,6 +134,18 @@ public class ShootAction : BaseAction
 
                 if (targetUnit.IsEnemy() == unit.IsEnemy())
                 {   
+                    continue;
+                }
+
+                Vector3 unitWorldPosition = LevelGrid.Instance.GetWorldPosition(unitGridPosition);
+                Vector3 shootDirection = (targetUnit.GetWorldPosition() - unitWorldPosition).normalized;
+                float unitShoulderHeight = 1.7f;
+                if (Physics.Raycast(
+                    unitWorldPosition + Vector3.up * unitShoulderHeight,
+                    shootDirection,
+                    Vector3.Distance(unitWorldPosition, targetUnit.GetWorldPosition()),
+                    obstaclesLayerMask))
+                {
                     continue;
                 }
 
