@@ -13,7 +13,7 @@ public class Pathfinding : MonoBehaviour
     [SerializeField] private LayerMask obstaclesLayerMask;
 
     private float cellSize;
-    private GridSystem<PathNode> gridSystem;
+    private GridSystemHex<PathNode> gridSystem;
 
     private int width;
     private int height;
@@ -36,8 +36,8 @@ public class Pathfinding : MonoBehaviour
         this.height = height;
         this.cellSize = cellSize;
 
-        gridSystem = new GridSystem<PathNode>(width, height, cellSize, 
-            (GridSystem<PathNode> gameObject, GridPosition gridPosition) => new PathNode(gridPosition)
+        gridSystem = new GridSystemHex<PathNode>(width, height, cellSize, 
+            (GridSystemHex<PathNode> gameObject, GridPosition gridPosition) => new PathNode(gridPosition)
         );
         //gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
 
