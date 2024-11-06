@@ -17,7 +17,7 @@ public class LevelGrid : MonoBehaviour
     [SerializeField] private int height;
 
     [SerializeField] private float cellSize;
-    [SerializeField] private float floorAmount;
+    [SerializeField] private int floorAmount;
     [SerializeField] private Transform gridDebugObjectPrefab;
 
     private List<GridSystem<GridObject>> gridSystemList;
@@ -48,7 +48,6 @@ public class LevelGrid : MonoBehaviour
             gridSystemList.Add(gridSystem);
         }
     }
-
     private void Start()
     {
         Pathfinding.Instance.Setup(width, height, cellSize);
@@ -126,6 +125,11 @@ public class LevelGrid : MonoBehaviour
     public int GetHeight()
     {
         return GetGridSystem(0).GetHeight();
+    }
+
+    public int GetFloorAmount()
+    {
+        return floorAmount;
     }
 
     public IInteractable GetInteractableAtGridPosition(GridPosition gridPosition)
