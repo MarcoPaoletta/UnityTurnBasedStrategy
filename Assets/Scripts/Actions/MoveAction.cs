@@ -70,41 +70,44 @@ public class MoveAction : BaseAction
         {
             for (int z = -maxMoveDistance; z <= maxMoveDistance; z++)
             {
-                GridPosition offsetGridPosition = new GridPosition(x, z, 0);
-                GridPosition testGridPosition = unitGridPosition + offsetGridPosition;
-
-                if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                for (int floor = -maxMoveDistance; floor < maxMoveDistance; floor++)
                 {
-                    continue;
-                }
+                    GridPosition offsetGridPosition = new GridPosition(x, z, floor);
+                    GridPosition testGridPosition = unitGridPosition + offsetGridPosition;
 
-                if (unitGridPosition == testGridPosition)
-                {
-                    continue;
-                }
+                    if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                    {
+                        continue;
+                    }
 
-                if (LevelGrid.Instance.HasAnyUnitOnGridPosition(testGridPosition))
-                {
-                    continue;
-                }
+                    if (unitGridPosition == testGridPosition)
+                    {
+                        continue;
+                    }
 
-                if (!Pathfinding.Instance.IsWalkableGridPosition(testGridPosition))
-                {
-                    continue;
-                }
+                    if (LevelGrid.Instance.HasAnyUnitOnGridPosition(testGridPosition))
+                    {
+                        continue;
+                    }
 
-                if (!Pathfinding.Instance.HasPath(unitGridPosition, testGridPosition))
-                {
-                    continue;
-                }
+                    if (!Pathfinding.Instance.IsWalkableGridPosition(testGridPosition))
+                    {
+                        continue;
+                    }
 
-                int pathfindingDistanceMultiplier = 10;
-                if (Pathfinding.Instance.GetPathLength(unitGridPosition, testGridPosition) > maxMoveDistance * pathfindingDistanceMultiplier)
-                {
-                    continue;
-                }
+                    if (!Pathfinding.Instance.HasPath(unitGridPosition, testGridPosition))
+                    {
+                        continue;
+                    }
 
-                validGridPositionList.Add(testGridPosition);
+                    int pathfindingDistanceMultiplier = 10;
+                    if (Pathfinding.Instance.GetPathLength(unitGridPosition, testGridPosition) > maxMoveDistance * pathfindingDistanceMultiplier)
+                    {
+                        continue;
+                    }
+
+                    validGridPositionList.Add(testGridPosition);
+                }
             }
         }
 
