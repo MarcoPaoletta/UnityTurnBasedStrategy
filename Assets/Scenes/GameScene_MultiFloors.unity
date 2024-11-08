@@ -636,8 +636,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35168117, y: -0.1781432, z: 0.0683599, w: 0.9164673}
-  m_LocalPosition: {x: 5.526066, y: 8.99999, z: -4.5918393}
+  m_LocalRotation: {x: 0.09672734, y: -0.18988039, z: 0.018801892, w: 0.9768499}
+  m_LocalPosition: {x: 5.526066, y: 2.000003, z: -4.5918393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2756,8 +2756,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668714859}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35168117, y: -0.17814317, z: 0.06835988, w: 0.91646737}
-  m_LocalPosition: {x: 5.526066, y: 8.99999, z: -4.5918393}
+  m_LocalRotation: {x: 0.09672735, y: -0.1898804, z: 0.01880189, w: 0.9768499}
+  m_LocalPosition: {x: 5.526066, y: 2.000003, z: -4.5918393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5123,6 +5123,7 @@ GameObject:
   - component: {fileID: 982949888}
   - component: {fileID: 982949887}
   - component: {fileID: 982949890}
+  - component: {fileID: 982949891}
   m_Layer: 6
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -5216,6 +5217,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &982949891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982949885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ee768966824bd41bcc4ac3aa07ad1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dynamicFloorPosition: 0
+  ignoreRendererList: []
 --- !u!1001 &1013278548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8535,7 +8550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 8.99999, z: -10}
+  m_FollowOffset: {x: 0, y: 2.000003, z: -10}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -10129,7 +10144,7 @@ PrefabInstance:
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5673558609780328114, guid: 78aca5a12eeb3964884b75370d795f94,
         type: 3}
